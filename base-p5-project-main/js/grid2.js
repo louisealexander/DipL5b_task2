@@ -1,6 +1,6 @@
 let textures = [];
 function preload(){
-    let texturesNum = 12;
+    let texturesNum = 6;
     for(let i = 1; i <= texturesNum; i++){
         // let texture = loadImage("images/texture" + i + ".png"); //concatenation
         let t = loadImage(`images/texture${i}.png`); // backticks are 'template literals' and dollar sign curly brace is string interpolation  
@@ -8,6 +8,7 @@ function preload(){
     }
 }
 function setup() {
+    colours = [color('#251c5f'), color('#d43717'), color('#699035'), color('#e4cb29'), color('#2f1a1d'), color('#d5004d'), color('#76012d'), color('#4a78b1'), color('#8e2568'), color('#dd991c')]
     createCanvas(800, 800);
     const CELL_SIZE = 80;
     let x = 0;
@@ -15,10 +16,11 @@ function setup() {
     noStroke();
     while(y < height){
         while(x < width){
+            tint(random(colours));
             let t = random(textures);
-            image(t, x, y, CELL_SIZE);
-            x += CELL_SIZE;
-        }
+                image(t, x + random(-2, 2), y + random(-4, 2), CELL_SIZE + random(-3, 3), CELL_SIZE + random(-6, 4));
+                x += CELL_SIZE;
+            }
         y += CELL_SIZE;
         x = 0;
     }
