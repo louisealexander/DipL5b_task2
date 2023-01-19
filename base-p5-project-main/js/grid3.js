@@ -3,6 +3,7 @@ function setup() {
     noLoop();
     noFill();
     colours = [color('#251c5f'), color('#d43717'), color('#699035'), color('#e4cb29'), color('#2f1a1d'), color('#d5004d'), color('#76012d'), color('#4a78b1'), color('#8e2568'), color('#dd991c')]
+    // colours = [color('#042940'), color('#005C53'), color('#9FC131'), color('#DBF227'), color('#D6D58E')]
 }
 
 function draw() {
@@ -19,10 +20,10 @@ function draw() {
                 // change the starting point of each instance to the correct location
                 translate(width / 10 + x * size, height / 10 + y * size);
                 quad(
-                    random(-5, 5), random(-5, 5),
-                    random(size / 2 - 5, size + 5), random(-5, 5),
-                    random(size / 2 - 5, size + 5), random(size / 2 - 5, size + 5),
-                    random(-1, 1), random(size / 2 - 5, size)
+                    random(-10,10), random(-10,10), 
+                    random(size/2-5,size+5), random(-5,5), 
+                    random(size/2-5, size+5), random(size/2-5,size+5), 
+                    random(-5,5), random(size/2-5,size+5)
                 )
                 pop(); // reset the drawing state
             }
